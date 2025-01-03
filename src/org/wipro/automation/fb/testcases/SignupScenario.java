@@ -3,6 +3,7 @@ package org.wipro.automation.fb.testcases;
 import org.testng.annotations.Test;
 import org.wipro.automation.fb.basePkg.InitiateBrowser;
 import org.wipro.automation.fb.pages.SignPage;
+import org.wipro.automation.fb.utilitiesPkg.ReadPropFile;
 
 public class SignupScenario extends InitiateBrowser
 {
@@ -12,7 +13,7 @@ public class SignupScenario extends InitiateBrowser
 	{
 		SignPage sign = new SignPage(driver);
 		sign.click_createnewaccountbttn();
-		sign.enter_firstname("John");
+		sign.enter_firstname(ReadPropFile.readconfig("signup_firstname"));
 		sign.enter_lastnamename("Thomas");
 		sign.select_dob_day("28");
 		sign.click_male();
